@@ -1,0 +1,2 @@
+# JayJayBot
+Discord Bazaar Bot
