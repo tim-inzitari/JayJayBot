@@ -4,6 +4,12 @@ import pandas as pd
 # Load the JSON file into a DataFrame
 df = pd.read_json('ExampleFile/v2_Cards.json')
 
+def get_card_message_function(name: str):
+    card_id = name_to_id[name]
+
+    card_obj = df[card_id]
+    return f'{card_obj['InternalName']} is a {card_obj['Heroes']} card that Tags {card_obj['Tags']} elixir and has {card_obj['Localization']['Tooltips']} as its tooltips.'
+
 
 def populate_item_dict(df):
     df = df.transpose()

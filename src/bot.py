@@ -6,7 +6,7 @@ import datetime
 import random
 from dotenv import load_dotenv
 from discord import app_commands
-from getCard import get_card_obj_by_name, name_to_id, id_to_name, df
+from getCard import name_to_id, id_to_name, df, get_card_message_function
 
 class MyClient(discord.Client):
     async def on_ready(self):
@@ -38,7 +38,7 @@ def main():
     )
 
     async def cardinfo(ctx, name: str):
-        card_obj = get_card_obj_by_name(name)
+        card_obj = get_card_message_function(name)
         await ctx.response.send_message(str(card_obj)[:1500])
 
     client.run(os.environ.get('DISCORD_TOKEN'))
