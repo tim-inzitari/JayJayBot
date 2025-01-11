@@ -12,8 +12,6 @@ class MyClient(discord.Client):
     async def on_ready(self):
         print(f'Logged on as {self.user}!')
 
-    async def on_message(self, message):
-        print(f'Message from {message.author}: {message.content}')
 
 
 
@@ -33,11 +31,11 @@ def main():
 
   
     @tree.command(
-        name="cardinfo",
-        description="CardInfo by name",
+        name="item",
+        description="Item by name",
     )
 
-    async def cardinfo(ctx, name: str):
+    async def item(ctx, name: str):
         card_obj = get_card_message_function(name)
         await ctx.response.send_message(str(card_obj)[:1500])
 

@@ -30,7 +30,4 @@ def get_card_obj_by_name(name):
 
     return card_obj
 
-print(get_card_obj_by_name('Rainbow Potion'))
-
-
 
